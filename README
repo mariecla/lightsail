@@ -1,0 +1,85 @@
+# Terraform AWS Lightsail Instance with Static Website
+
+This Terraform configuration deploys an Amazon Lightsail instance in the `us-east-1` region and sets up a basic web server hosting a static website. The website content is fetched from a GitHub repository and served using the Apache HTTP server.
+
+## Prerequisites
+
+Before you begin, ensure that you have the following prerequisites in place:
+
+1. [Terraform](https://www.terraform.io/downloads.html) installed on your local machine.
+
+2. AWS credentials configured either using environment variables, AWS CLI configuration, or an IAM role with appropriate permissions.
+
+## Usage
+
+Follow these steps to deploy the Lightsail instance and static website:
+
+1. Clone this repository or create a new directory for your Terraform configuration.
+
+2. Create a `.tf` file (e.g., `main.tf`) and paste the provided Terraform code into it.
+
+3. Initialize the Terraform workspace:
+
+   ```bash
+   terraform init
+
+
+Certainly! Here's a README file that you can include alongside your Terraform code to explain its purpose and provide instructions for its usage:
+
+markdown
+Copy code
+# Terraform AWS Lightsail Instance with Static Website
+
+This Terraform configuration deploys an Amazon Lightsail instance in the `us-east-1` region and sets up a basic web server hosting a static website. The website content is fetched from a GitHub repository and served using the Apache HTTP server.
+
+## Prerequisites
+
+Before you begin, ensure that you have the following prerequisites in place:
+
+1. [Terraform](https://www.terraform.io/downloads.html) installed on your local machine.
+
+2. AWS credentials configured either using environment variables, AWS CLI configuration, or an IAM role with appropriate permissions.
+
+## Usage
+
+Follow these steps to deploy the Lightsail instance and static website:
+
+1. Clone this repository or create a new directory for your Terraform configuration.
+
+2. Create a `.tf` file (e.g., `main.tf`) and paste the provided Terraform code into it.
+
+3. Initialize the Terraform workspace:
+
+   ```bash
+   terraform init
+Review and customize the configuration if necessary. You can modify the name, availability_zone, blueprint_id, and bundle_id to suit your requirements. Ensure that your Lightsail bundle supports your desired instance specifications.
+
+Deploy the Lightsail instance and website resources:
+
+bash
+Copy code
+terraform apply
+Terraform will prompt you to confirm the changes. Type yes to proceed.
+
+Wait for Terraform to provision the resources. Upon completion, Terraform will display the public IP address of the Lightsail instance.
+
+Access the static website by opening a web browser and navigating to the public IP address shown in the Terraform output.   
+
+   If the web server's static website doesn't open, SSH in the lightsail server running install manually user_data.
+ - create a directory (name)
+ - change a directory (name) created
+ - create a file (lightsail.sh) 
+ - #vi or vim a file created
+ - copy content in the file (lightsail-server.sh in the terraform code repository and paste it into a file (lightsail.sh) 
+ - save and quit
+ - execute a file using a command 
+  # bash lightaisail.sh
+ - get the IP address and test again 
+
+Cleanup if you wont
+To destroy the Lightsail instance and associated resources when you no longer need them, run:
+
+bash
+Copy code
+terraform destroy
+Terraform will prompt you to confirm the destruction of resources. Type yes to proceed.
